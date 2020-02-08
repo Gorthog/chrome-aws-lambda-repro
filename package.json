@@ -1,9 +1,6 @@
 {
   "name": "functions",
   "scripts": {
-    "lint": "tslint --project tsconfig.json",
-    "test": "mocha",
-    "coverage": "nyc mocha",
     "start": "npx tsc-watch --onSuccess \"node --inspect node_modules/@google-cloud/functions-framework --target=finalPrice\"",
     "deploy": "npx tsc && gcloud functions deploy finalPrice --verbosity debug --source dist --runtime nodejs8 --trigger-http --region europe-west2"
   },
@@ -17,15 +14,6 @@
     "ts-node": "8.3.0",
     "tsc-watch": "^2.4.0",
     "typescript": "3.7.5"
-  },
-  "nyc": {
-    "extends": "@istanbuljs/nyc-config-typescript",
-    "all": true,
-    "reporter": [
-      "text",
-      "lcov",
-      "html"
-    ]
   },
   "private": true,
   "dependencies": {
